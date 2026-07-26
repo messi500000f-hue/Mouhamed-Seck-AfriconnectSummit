@@ -153,3 +153,160 @@ button {
   border-color: var(--color-primary);
   color: var(--color-primary);
 }
+/* ==========================================================================
+   HEADER & NAVBAR RESPONSIVE
+   ========================================================================== */
+
+/* Structure du Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal), padding var(--transition-normal);
+  padding: var(--space-sm) 0;
+}
+
+/* Style de la navbar quand l'utilisateur défile (> 80px) */
+.header.scrolled {
+  background-color: var(--bg-surface);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  padding: 0.75rem 0;
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+/* Menu de navigation Desktop */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+/* Indicateur sous le lien actif */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Actions Header (Bouton thème + Menu Hamburger) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Bouton Hamburger (Masqué sur Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+/* Animation Hamburger -> Croix (Mobile Ouvert) */
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE NAVBAR (TABLETTE & MOBILE < 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Afficher le bouton hamburger */
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Masqué hors de l'écran */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg-surface);
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    box-shadow: -5px 0 25px var(--shadow-color);
+    transition: right var(--transition-normal);
+  }
+
+  .nav-menu.is-active {
+    right: 0; /* Menu ouvert */
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+}
