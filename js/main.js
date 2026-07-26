@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initFooterAndScroll();
   initScheduleTabs();
+  initSpeakersFilter();
+  initSpeakerModal();
 });
 
 /* --------------------------------------------------------------------------
@@ -196,16 +198,99 @@ function initScheduleTabs() {
     btn.addEventListener('click', () => {
       const targetDay = btn.getAttribute('data-day');
 
-      // Désactiver tous les boutons et panneaux
       tabBtns.forEach(b => b.classList.remove('active'));
       tabPanes.forEach(p => p.classList.remove('active'));
 
-      // Activer l'élément cliqué et son panneau
       btn.classList.add('active');
       const targetPane = document.getElementById(`day-${targetDay}`);
       if (targetPane) {
         targetPane.classList.add('active');
       }
     });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   7. FILTRAGE DES INTERVENANTS (INTERVENANTS.HTML)
+   -------------------------------------------------------------------------- */
+function initSpeakersFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const speakerCards = document.querySelectorAll('.speaker-card-full');
+
+  if (filterBtns.length === 0) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      speakerCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (filterValue === 'all' || filterValue === category) {
+          card.classList.remove('hide');
+          card.classList.add('show');
+        } else {
+          card.classList.remove('show');
+          card.classList.add('hide');
+        }
+      });
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   8. FENÊTRE MODALE BIOGRAPHIE (INTERVENANTS.HTML)
+   -------------------------------------------------------------------------- */
+function initSpeakerModal() {
+  const modalOverlay = document.getElementById('speaker-modal');
+  const modalCloseBtn = document.getElementById('modal-close');
+  const speakerCards = document.querySelectorAll('.speaker-card-full');
+
+  if (!modalOverlay) return;
+
+  // Éléments cibles dans la modale
+  const modalName = document.getElementById('modal-speaker-name');
+  const modalRole = document.getElementById('modal-speaker-role');
+  const modalBio = document.getElementById('modal-speaker-bio');
+
+  speakerCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const name = card.getAttribute('data-name');
+      const role = card.getAttribute('data-role');
+      const bio = card.getAttribute('data-bio');
+
+      if (modalName) modalName.textContent = name;
+      if (modalRole) modalRole.textContent = role;
+      if (modalBio) modalBio.textContent = bio;
+
+      modalOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden'; // Bloquer le défilement arrière
+    });
+  });
+
+  function closeModal() {
+    modalOverlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
+  }
+
+  // Fermeture en cliquant sur l'arrière-plan noir
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      closeModal();
+    }
+  });
+
+  // Fermeture avec la touche Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
+      closeModal();
+    }
   });
 }

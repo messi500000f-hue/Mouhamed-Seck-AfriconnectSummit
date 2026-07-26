@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intervenants | AfriConnect Summit 2026</title>
+  <meta name="description" content="Découvrez les experts, fondateurs et chercheurs qui prendront la parole à AfriConnect Summit 2026.">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-network-wired"></i> AfriConnect <span>2026</span>
+      </a>
+
+      <nav>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="programme.html" class="nav-link">Programme</a></li>
+          <li><a href="intervenants.html" class="nav-link active">Intervenants</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+          <i id="theme-icon" class="fa-solid fa-moon"></i>
+          <span id="theme-text">Sombre</span>
+        </button>
+
+        <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Nos Intervenants</h1>
+        <p class="page-description">Des esprits brillants façonnant le paysage technologique et économique du continent.</p>
+      </div>
+    </section>
+
+    <!-- SECTION INTERVENANTS & FILTRES -->
+    <section class="speakers-page-section">
+      <div class="container">
+        
+        <!-- BOUTONS DE FILTRAGE -->
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="ai">IA & Data</button>
+          <button class="filter-btn" data-filter="fintech">FinTech</button>
+          <button class="filter-btn" data-filter="cloud">Cloud & Infrastructure</button>
+        </div>
+
+        <!-- GRILLE DE CARTES -->
+        <div class="speakers-grid">
+          
+          <!-- Speaker 1 -->
+          <article class="speaker-card speaker-card-full" 
+                   data-category="ai"
+                   data-name="Aminata Diallo" 
+                   data-role="VP of AI @ TechAfrica"
+                   data-bio="Aminata Diallo possède plus de 15 ans d'expérience dans la recherche en Intelligence Artificielle. Pionnière du NLP pour les langues africaines à faible ressource, elle dirige actuellement les initiatives IA chez TechAfrica.">
+            <div class="speaker-image-wrapper">
+              <div class="speaker-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <span class="speaker-flag">🇸🇳 Sénégal</span>
+            </div>
+            <div class="speaker-info">
+              <span class="speaker-topic-tag">IA & Data</span>
+              <h3 class="speaker-name">Aminata Diallo</h3>
+              <p class="speaker-role">VP of AI @ TechAfrica</p>
+              <div class="speaker-btn-more">
+                En savoir plus <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speaker 2 -->
+          <article class="speaker-card speaker-card-full" 
+                   data-category="fintech"
+                   data-name="Kouassi Konan" 
+                   data-role="Fondateur & CEO @ PayQuick"
+                   data-bio="Entrepreneur en série, Kouassi Konan a démocratisé les paiements en ligne dans toute la région UEMOA avec la plateforme PayQuick, traitant plus de 5 millions de transactions mensuelles.">
+            <div class="speaker-image-wrapper">
+              <div class="speaker-avatar"><i class="fa-solid fa-user-gear"></i></div>
+              <span class="speaker-flag">🇨🇮 Côte d'Ivoire</span>
+            </div>
+            <div class="speaker-info">
+              <span class="speaker-topic-tag">FinTech</span>
+              <h3 class="speaker-name">Kouassi Konan</h3>
+              <p class="speaker-role">Fondateur & CEO @ PayQuick</p>
+              <div class="speaker-btn-more">
+                En savoir plus <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speaker 3 -->
+          <article class="speaker-card speaker-card-full" 
+                   data-category="cloud"
+                   data-name="Samuel Eto'o Junior" 
+                   data-role="Head of Cloud @ DataSys"
+                   data-bio="Ingénieur système certifié AWS et Azure, Samuel conseille les grandes banques et institutions africaines sur la migration Cloud sécurisée et les architectures résilientes.">
+            <div class="speaker-image-wrapper">
+              <div class="speaker-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+              <span class="speaker-flag">🇨🇲 Cameroun</span>
+            </div>
+            <div class="speaker-info">
+              <span class="speaker-topic-tag">Cloud & Infra</span>
+              <h3 class="speaker-name">Samuel Eto'o Junior</h3>
+              <p class="speaker-role">Head of Cloud @ DataSys</p>
+              <div class="speaker-btn-more">
+                En savoir plus <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speaker 4 -->
+          <article class="speaker-card speaker-card-full" 
+                   data-category="ai"
+                   data-name="Yasmine Benali" 
+                   data-role="Lead Product Designer @ SahelUI"
+                   data-bio="Yasmine est spécialisée dans l'accessibilité UX/UI pour les applications mobiles destinées aux zones rurales à connectivité limitée. Elle milite pour un design universel et inclusif.">
+            <div class="speaker-image-wrapper">
+              <div class="speaker-avatar"><i class="fa-solid fa-user-ninja"></i></div>
+              <span class="speaker-flag">🇲🇦 Maroc</span>
+            </div>
+            <div class="speaker-info">
+              <span class="speaker-topic-tag">IA & Data</span>
+              <h3 class="speaker-name">Yasmine Benali</h3>
+              <p class="speaker-role">Lead Product Designer @ SahelUI</p>
+              <div class="speaker-btn-more">
+                En savoir plus <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FENÊTRE MODALE POP-UP DE BIOGRAPHIE -->
+  <div id="speaker-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button id="modal-close" class="modal-close" aria-label="Fermer la fenêtre">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="modal-title-group">
+            <h3 id="modal-speaker-name">Nom de l'intervenant</h3>
+            <p id="modal-speaker-role" class="modal-role">Rôle / Entreprise</p>
+          </div>
+        </div>
+
+        <p id="modal-speaker-bio" class="modal-bio">
+          Chargement de la biographie...
+        </p>
+
+        <div class="modal-footer">
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Retrouvez ses sessions lors du sommet</span>
+          <div class="modal-socials">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">
+            <i class="fa-solid fa-network-wired"></i> AfriConnect <span>2026</span>
+          </a>
+          <p class="footer-desc">Le sommet technologique d'innovation panafricain réunissant les acteurs majeurs du numérique.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Inscription & Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Infos Pratiques</h4>
+          <ul class="footer-links">
+            <li><a href="#">Centre de Conférence de Dakar</a></li>
+            <li><a href="#">Hôtels Partenaires</a></li>
+            <li><a href="#">Accréditations Presse</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> AfriConnect Summit. Tous droits réservés.</p>
+        <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de page">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
