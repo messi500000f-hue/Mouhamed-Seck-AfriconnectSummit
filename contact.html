@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription & Contact | AfriConnect Summit 2026</title>
+  <meta name="description" content="Inscrivez-vous ou contactez l'équipe d'AfriConnect Summit 2026. réservations de pass, partenariats et informations.">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-network-wired"></i> AfriConnect <span>2026</span>
+      </a>
+
+      <nav>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="programme.html" class="nav-link">Programme</a></li>
+          <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+          <i id="theme-icon" class="fa-solid fa-moon"></i>
+          <span id="theme-text">Sombre</span>
+        </button>
+
+        <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Inscription & Contact</h1>
+        <p class="page-description">Une question sur l'événement ou besoin d'un Pass personnalisé ? Écrivez-nous.</p>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE & INFORMATIONS -->
+    <section class="contact-section">
+      <div class="container contact-grid">
+        
+        <!-- INFOS PRATIQUES -->
+        <div class="contact-info">
+          <span class="section-tag">Restons en contact</span>
+          <h2 style="margin-top: 0.5rem;">Informations Pratiques</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+            Notre équipe est disponible pour répondre à vos demandes de billets, opportunités de sponsoring ou accréditations média.
+          </p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>Lieu du Sommet</h4>
+                <p>Centre International de Conférences Abdou Diouf (CICAD), Dakar, Sénégal</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>E-mail Officiel</h4>
+                <p>contact@africonnect2026.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-info-text">
+                <h4>Téléphone</h4>
+                <p>+221 33 800 00 00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD FORMULAIRE -->
+        <div class="form-card">
+          <div id="form-success" class="alert-success" style="display: none;">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Votre message a été envoyé avec succès ! Nous vous répondrons sous 24h.</span>
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="fullname">Nom Complet *</label>
+              <input type="text" id="fullname" class="form-control" placeholder="ex: Sarah Mansouri">
+              <span class="form-error-msg">Veuillez saisir votre nom.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Adresse E-mail *</label>
+              <input type="email" id="email" class="form-control" placeholder="ex: sarah@entreprise.com">
+              <span class="form-error-msg">Veuillez saisir un e-mail valide.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet / Type de demande *</label>
+              <select id="subject" class="form-control">
+                <option value="">-- Sélectionnez une option --</option>
+                <option value="ticket">Achat de Pass / Billeterie</option>
+                <option value="sponsor">Devenir Sponsor / Partenaire</option>
+                <option value="press">Presse & Médias</option>
+                <option value="other">Autre question</option>
+              </select>
+              <span class="form-error-msg">Veuillez sélectionner un sujet.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Votre Message</label>
+              <textarea id="message" class="form-control" placeholder="Précisez votre demande..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Envoyer la Demande <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION FAQ (ACCORDÉON) -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="section-tag">Questions Fréquentes</span>
+          <h2>Avez-vous des questions ?</h2>
+        </div>
+
+        <div class="faq-container">
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Comment obtenir mon badge d'accès ?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Une fois votre inscription validée en ligne, un QR Code personnalisé vous sera envoyé par email. Il vous suffira de le présenter à l'entrée du CICAD pour retirer votre badge physique.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>L'événement sera-t-il retransmis en ligne ?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Oui ! Les sessions plénières et keynotes principales seront diffusées en streaming direct pour les détenteurs du Pass Digital.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Existe-t-il des tarifs préférentiels pour les étudiants et startups ?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolument. Nous proposons une réduction de 50% pour les étudiants (sur justification) et un Pass Startup avantageux. Contactez-nous via le formulaire ci-dessus.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">
+            <i class="fa-solid fa-network-wired"></i> AfriConnect <span>2026</span>
+          </a>
+          <p class="footer-desc">Le sommet technologique d'innovation panafricain réunissant les acteurs majeurs du numérique.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Inscription & Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Infos Pratiques</h4>
+          <ul class="footer-links">
+            <li><a href="#">Centre de Conférence de Dakar</a></li>
+            <li><a href="#">Hôtels Partenaires</a></li>
+            <li><a href="#">Accréditations Presse</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> AfriConnect Summit. Tous droits réservés.</p>
+        <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de page">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScheduleTabs();
   initSpeakersFilter();
   initSpeakerModal();
+  initContactForm();
+  initFaqAccordion();
 });
 
 /* --------------------------------------------------------------------------
@@ -251,7 +253,6 @@ function initSpeakerModal() {
 
   if (!modalOverlay) return;
 
-  // Éléments cibles dans la modale
   const modalName = document.getElementById('modal-speaker-name');
   const modalRole = document.getElementById('modal-speaker-role');
   const modalBio = document.getElementById('modal-speaker-bio');
@@ -267,7 +268,7 @@ function initSpeakerModal() {
       if (modalBio) modalBio.textContent = bio;
 
       modalOverlay.classList.add('is-open');
-      document.body.style.overflow = 'hidden'; // Bloquer le défilement arrière
+      document.body.style.overflow = 'hidden';
     });
   });
 
@@ -280,17 +281,119 @@ function initSpeakerModal() {
     modalCloseBtn.addEventListener('click', closeModal);
   }
 
-  // Fermeture en cliquant sur l'arrière-plan noir
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) {
       closeModal();
     }
   });
 
-  // Fermeture avec la touche Échap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
       closeModal();
     }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   9. VALIDATION FORMULAIRE DE CONTACT (CONTACT.HTML)
+   -------------------------------------------------------------------------- */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const successAlert = document.getElementById('form-success');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    // Récupération des champs
+    const nameInput = document.getElementById('fullname');
+    const emailInput = document.getElementById('email');
+    const typeSelect = document.getElementById('subject');
+
+    // Reset des erreurs
+    document.querySelectorAll('.form-group').forEach(group => {
+      group.classList.remove('has-error');
+    });
+
+    // Valider le Nom
+    if (!nameInput.value.trim()) {
+      showError(nameInput, 'Veuillez saisir votre nom complet.');
+      isValid = false;
+    }
+
+    // Valider l'Email
+    if (!emailInput.value.trim()) {
+      showError(emailInput, 'Veuillez saisir votre adresse e-mail.');
+      isValid = false;
+    } else if (!validateEmail(emailInput.value.trim())) {
+      showError(emailInput, 'Veuillez saisir un e-mail valide.');
+      isValid = false;
+    }
+
+    // Valider le type de demande
+    if (!typeSelect.value) {
+      showError(typeSelect, 'Veuillez sélectionner un sujet.');
+      isValid = false;
+    }
+
+    // Si tout est valide
+    if (isValid) {
+      if (successAlert) {
+        successAlert.style.display = 'flex';
+      }
+      form.reset();
+      
+      setTimeout(() => {
+        if (successAlert) successAlert.style.display = 'none';
+      }, 5000);
+    }
+  });
+
+  function showError(input, message) {
+    const group = input.closest('.form-group');
+    if (group) {
+      group.classList.add('has-error');
+      const errorMsg = group.querySelector('.form-error-msg');
+      if (errorMsg) {
+        errorMsg.textContent = message;
+      }
+    }
+  }
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. ACCORDÉON FAQ (CONTACT.HTML)
+   -------------------------------------------------------------------------- */
+function initFaqAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  if (faqQuestions.length === 0) return;
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isActive = item.classList.contains('active');
+
+      // Fermer tous les autres items
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        otherItem.classList.remove('active');
+        const otherAnswer = otherItem.querySelector('.faq-answer');
+        if (otherAnswer) otherAnswer.style.maxHeight = null;
+      });
+
+      // Basculer l'item actuel
+      if (!isActive) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
   });
 }
