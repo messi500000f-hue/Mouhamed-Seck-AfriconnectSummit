@@ -1490,3 +1490,54 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================================================
+   COMMIT 8 : FINITION, MODALE LÉGALE ET IMPRESSION (PRINT CSS)
+   ========================================================================== */
+
+/* --- Modale Mentions Légales --- */
+.legal-modal {
+  max-width: 650px;
+}
+
+.legal-content h3 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  font-size: 1.1rem;
+}
+
+.legal-content p {
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+/* --- Styles pour l'impression (Print CSS) --- */
+@media print {
+  .header,
+  .footer,
+  .theme-toggle,
+  .back-to-top,
+  .btn,
+  .filter-btns,
+  .tab-navigation,
+  .countdown-grid {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .card, .speaker-card-full, .schedule-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}

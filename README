@@ -1,0 +1,67 @@
+# AfriConnect Summit 2026
+
+## Description
+**AfriConnect Summit 2026** est la plateforme web vitrine fictive d'un sommet technologique et d'innovation d'envergure internationale, réunissant les leaders tech, startups et investisseurs à Dakar, Sénégal.
+
+Ce projet a été réalisé dans le cadre d'un projet académique individuel afin de mettre en pratique les technologies fondamentales du développement web front-end et d'appliquer une gestion de projet rigoureuse avec Git.
+
+---
+
+## Objectifs du projet
+* **Créer un site vitrine moderne, accessible et 100% responsive.**
+* **Présenter le programme de l'événement** et la liste des intervenants de manière dynamique.
+* **Proposer une expérience utilisateur interactive et fluide** grâce à des composants JavaScript personnalisés.
+* **Proposer la gestion du mode sombre / clair** avec conservation des préférences utilisateur.
+* **Structurer le projet avec un suivi de version Git propre** découpé en commits thématiques.
+
+---
+
+## Technologies utilisées
+* **HTML5** (Sémantique et accessible)
+* **CSS3** (Variables CSS, Flexbox, CSS Grid, animations & support Print)
+* **JavaScript Vanilla (ES6+)** (DOM Manipulation, IntersectObserver, LocalStorage)
+* **Font Awesome 6** (Iconographie)
+
+---
+
+## Fonctionnalités
+
+### Interface utilisateur
+* **Navbar responsive** avec menu burger mobile.
+* **Hero section moderne** avec compte à rebours temps réel.
+* **Page Programme** structurée avec un système d'onglets par journée.
+* **Page Intervenants** sous forme de cartes d'experts.
+* **Formulaire de contact / inscription** avec validation dynamique.
+* **Section FAQ** interactive sous forme d'accordéon.
+
+### Expérience utilisateur & Interactions
+* **Dark / Light Mode** avec sauvegarde dans le `localStorage`.
+* **Navbar dynamique** changeant au défilement (scroll).
+* **Compte à rebours temps réel** indiquant le temps restant avant le sommet.
+* **Compteurs statistiques animés** à l'apparition à l'écran.
+* **Filtrage dynamique** des intervenants par catégorie.
+* **Modale biographie** pour consulter le détail du parcours des speakers.
+* **Validation dynamique des formulaires en JavaScript** (gestion des erreurs et messages de succès).
+* **Bouton retour en haut de page** fluide.
+
+---
+
+## Structure du projet
+
+AfriConnect-Summit/
+│
+├── index.html          # Page d'accueil (Hero, Chiffres clés, Aperçu)
+├── programme.html      # Planning détaillé avec onglets par jour
+├── intervenants.html   # Liste des speakers avec filtres & modales
+├── contact.html        # Formulaire d'inscription & FAQ accordéon
+├── 404.html            # Page d'erreur 404 personnalisée
+│
+├── css/
+│   └── style.css       # Styles globaux, variables, dark mode & print
+│
+├── js/
+│   └── main.js          # Logique JS (Thème, Compteurs, Filtres, Modales, Formulaire)
+│
+├── README.md           # Documentation du projet
+
+## lien du site: https://messi500000f-hue.github.io/Mouhamed-Seck-AfriconnectSummit/
