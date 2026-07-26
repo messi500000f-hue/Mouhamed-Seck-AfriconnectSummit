@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initCounters();
   initFooterAndScroll();
+  initScheduleTabs();
 });
 
 /* --------------------------------------------------------------------------
@@ -165,13 +166,11 @@ function initCounters() {
    5. FOOTER (ANNÉE DYNAMIQUE & BOUTON RETOUR EN HAUT)
    -------------------------------------------------------------------------- */
 function initFooterAndScroll() {
-  // Injection dynamique de l'année actuelle
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Bouton de retour en haut de page
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', (e) => {
@@ -182,4 +181,31 @@ function initFooterAndScroll() {
       });
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   6. ONGLETS DU PROGRAMME (PROGRAMME.HTML)
+   -------------------------------------------------------------------------- */
+function initScheduleTabs() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  if (tabBtns.length === 0) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetDay = btn.getAttribute('data-day');
+
+      // Désactiver tous les boutons et panneaux
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+
+      // Activer l'élément cliqué et son panneau
+      btn.classList.add('active');
+      const targetPane = document.getElementById(`day-${targetDay}`);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
 }

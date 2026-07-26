@@ -857,3 +857,224 @@ button {
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================================================
+   COMMIT 5 : PAGE PROGRAMME, ONGLETS ET SESSIONS
+   ========================================================================== */
+
+/* Page Header / Hero secondaire */
+.page-header {
+  padding: var(--space-xl) 0 var(--space-lg) 0;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.page-title {
+  font-size: var(--fs-h1);
+  margin-bottom: var(--space-xs);
+}
+
+.page-description {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Navigation par Onglets (Days Navigation) --- */
+.schedule-section {
+  padding: var(--space-xl) 0;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tab-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(255, 94, 26, 0.3);
+}
+
+/* Panneaux de contenu des onglets */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Timeline / Cartes de Sessions --- */
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.session-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--space-md);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.session-card:hover {
+  border-color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+.session-time-location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  border-right: 2px solid var(--border-color);
+  padding-right: var(--space-sm);
+}
+
+.session-time {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.session-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Thématiques des badges */
+.badge-ai { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+.badge-fintech { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.badge-cloud { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+.badge-keynote { background: rgba(255, 94, 26, 0.15); color: var(--color-primary); }
+
+.session-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.session-desc {
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-sm);
+}
+
+.session-speaker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.speaker-avatar-mini {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+}
+
+/* --- Grille des Thématiques --- */
+.topics-section {
+  padding: var(--space-xl) 0;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+
+.topic-card {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.topic-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.topic-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.topic-desc {
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+}
+
+/* Responsive Sessions */
+@media (max-width: 768px) {
+  .session-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .session-time-location {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: var(--space-xs);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
